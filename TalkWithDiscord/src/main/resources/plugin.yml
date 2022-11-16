@@ -1,0 +1,5 @@
+name: TalkWithDiscord
+version: '${project.version}'
+main: com.github.sakakiaruka.talkwithdiscord.TalkWithDiscord
+api-version: 1.19
+authors: [ SakakiAruka ]

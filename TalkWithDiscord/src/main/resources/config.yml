@@ -1,0 +1,8 @@
+command:
+  - python3
+  - discord.py
+url:
+  - webhook.url.1
+  - webhook.url.2
+delay: 600
+interval: 20
