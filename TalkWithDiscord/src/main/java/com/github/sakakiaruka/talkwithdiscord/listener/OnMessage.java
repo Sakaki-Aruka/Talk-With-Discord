@@ -13,6 +13,8 @@ import java.net.URL;
 
 import java.util.List;
 
+import static com.github.sakakiaruka.talkwithdiscord.TalkWithDiscord.urls;
+
 public class OnMessage implements Listener {
 
     private Plugin plugin = new TalkWithDiscord().getPlugin();
@@ -23,7 +25,7 @@ public class OnMessage implements Listener {
         String name = event.getPlayer().getName();
         String message = event.getMessage();
 
-        List<String> urls = config.getStringList("url");
+        //List<String> urls = config.getStringList("url");
 
         String json = "{\"content\" : \""+message+"\" , \"username\" : \""+name+"\"}";
 

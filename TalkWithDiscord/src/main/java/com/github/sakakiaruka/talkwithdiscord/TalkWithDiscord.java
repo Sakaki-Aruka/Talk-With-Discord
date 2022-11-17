@@ -11,14 +11,15 @@ public final class TalkWithDiscord extends JavaPlugin {
 
     private Plugin plugin = this;
     public static List<String> command;
+    public static long delay;
+    public static List<String> urls;
     @Override
     public void onEnable() {
         // Plugin startup logic
-        long delay = this.getConfig().getLong("delay");
-        long interval = this.getConfig().getLong("interval");
-        new RunNable().runTaskTimer(new TalkWithDiscord().getPlugin(),delay,interval);
-
+        delay = this.getConfig().getLong("delay");
         command = this.getConfig().getStringList("command");
+        urls = this.getConfig().getStringList("url");
+        new RunNable().runTaskLaterAsynchronously(new TalkWithDiscord().getPlugin(),delay);
 
         getServer().getPluginManager().registerEvents(new OnMessage(),this);
     }
@@ -26,7 +27,7 @@ public final class TalkWithDiscord extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        new RunNable().run();
+        new RunNable().process.destroy();
     }
 
     public Plugin getPlugin(){

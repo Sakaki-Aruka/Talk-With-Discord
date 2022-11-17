@@ -13,7 +13,8 @@ public class RunNable extends BukkitRunnable {
 
     private Plugin plugin = new TalkWithDiscord().getPlugin();
     private int times = 0;
-    private Process process;
+    public static long pid;
+    public Process process;
     //private List<String> messages = new ArrayList<>();
 
     @Override
@@ -35,7 +36,9 @@ public class RunNable extends BukkitRunnable {
                 BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 while(true) {
                     String message = br.readLine();
-                    Bukkit.broadcastMessage(message);
+                    if(!message.equals(null) || !message.equalsIgnoreCase("")){
+                        Bukkit.broadcastMessage(message);
+                    }
                 }
             }catch (IOException ioe){
                 plugin.getLogger().info("Error occurred.\n");
