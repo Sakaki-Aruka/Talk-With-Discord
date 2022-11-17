@@ -7,6 +7,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
 
+import static com.github.sakakiaruka.talkwithdiscord.runnable.RunNable.process;
+
 public final class TalkWithDiscord extends JavaPlugin {
 
     private Plugin plugin = this;
@@ -27,7 +29,7 @@ public final class TalkWithDiscord extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        new RunNable().process.destroy();
+        process.destroy();
     }
 
     public Plugin getPlugin(){

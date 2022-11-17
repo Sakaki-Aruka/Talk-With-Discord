@@ -14,7 +14,7 @@ public class RunNable extends BukkitRunnable {
     private Plugin plugin = new TalkWithDiscord().getPlugin();
     private int times = 0;
     public static long pid;
-    public Process process;
+    public static Process process;
     //private List<String> messages = new ArrayList<>();
 
     @Override
