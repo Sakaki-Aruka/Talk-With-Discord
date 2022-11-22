@@ -35,7 +35,7 @@ public class OnMessage implements Listener {
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("POST");
                 conn.setDoOutput(true);
-                conn.setDoOutput(true);
+                conn.setDoInput(true);
                 conn.setRequestProperty("Content-Type","application/json; charset=utf-8");
                 conn.connect();
                 PrintStream ps = new PrintStream(conn.getOutputStream());
