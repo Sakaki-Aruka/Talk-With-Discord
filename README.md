@@ -1,2 +1,2 @@
 # talk-with-discord
-DiscordとMinecraftを連結する。
+**Discord**と**Minecraft*を連結します。
